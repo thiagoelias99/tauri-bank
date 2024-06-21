@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { z } from 'zod'
 import { invoke } from '@tauri-apps/api'
 import { Client } from '@/models/client'
+import { useToast } from '@/components/ui/use-toast'
 
 const formSchema = z.object({
   name: z.string().min(3).max(255),
@@ -29,17 +30,22 @@ export default function RegisterClientForm({ onOpenChange }: RegisterClientFormP
     },
   })
 
+  const { toast } = useToast()
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     invoke<Client>('register_new_client', { dto: { ...values } })
       .then((response) => {
         console.log(response)
+        form.reset()
+        toast({
+          title: 'Client registered successfully!',
+          description: `Id: ${response.id}`,
+        })
+        onOpenChange()
       })
       .catch((error) => {
         console.error(error)
       })
-
-    form.reset()
-    onOpenChange()
   }
 
   return (
