@@ -5,6 +5,8 @@ import AppRoutes from './app-routes'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <AppRoutes />
+    <div className='dark'>
+      <AppRoutes />
+    </div>
   </React.StrictMode>,
 )
