@@ -1,14 +1,21 @@
-// import { useState } from 'react'
-// import { invoke } from '@tauri-apps/api/tauri'
-
 import MenuItem from './components/menu-item'
 
 function HomePage() {
-  // const [greetMsg, setGreetMsg] = useState('')
-  // const [name, setName] = useState('')
+  // const clientDto = {
+  //   name: 'John Doe',
+  //   email: 'jhon@email.com',
+  //   phone: '123456789',
+  //   birthday: new Date('1990-01-01')
+  // }
 
-  // async function greet() {
-  //     setGreetMsg(await invoke('greet', { name }))
+  // async function registerNewClient() {
+  //   invoke<Client>('register_new_client', { dto: { ...clientDto, birthday: clientDto.birthday.toISOString()}})
+  //     .then((response) => {
+  //       console.log(response)
+  //     })
+  //     .catch((error) => {
+  //       console.error(error)
+  //     })
   // }
 
   return (
