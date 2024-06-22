@@ -13,6 +13,7 @@ use uuid::Uuid;
 use diesel::prelude::*;
 use tauri_bank::establish_connection;
 
+
 #[tauri::command]
 fn register_new_client(dto: RegisterClientDto) -> Result<Client, String> {
     // print!("Registering new client: {:?}", dto);
